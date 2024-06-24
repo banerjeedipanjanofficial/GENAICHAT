@@ -2,24 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const OpenAI = require("openai")
+require('dotenv').config;
+console.log(process.env)
 
 const app = express();
-const port = 5000; // Choose an appropriate port
-
-// Replace with your OpenAI API key
-// const configuration = new Configuration({
-//     apiKey: 'sk-proj-R9OHklcugcN0bJj0onQZT3BlbkFJ1UZKcmkufxjbxF6pJBZl',
-// });
+const port = 5000; 
 
 
 const openai = new OpenAI({
-  apiKey: "sk-proj-QA5SQFymlOycQhYK6576T3BlbkFJBsgsAcEsWbGqhWG7ExbC"// This is also the default, can be omitted
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
-// const openai = new OpenAIApi('sk-proj-R9OHklcugcN0bJj0onQZT3BlbkFJ1UZKcmkufxjbxF6pJBZl');
-
-// Middleware
-app.use(cors()); // Allow Cross-Origin requests
+app.use(cors()); 
 app.use(bodyParser.json());
 
 app.post('/api/ask', async (req, res) => {
