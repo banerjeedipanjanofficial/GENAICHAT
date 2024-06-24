@@ -8,7 +8,7 @@ const port = 5000;
 
 
 const openai = new OpenAI({
-  apiKey:"sk-proj-QA5SQFymlOycQhYK6576T3BlbkFJBsgsAcEsWbGqhWG7ExbC",
+  apiKey:"sk-proj-7LgJjLUcf8FUtKRqZ0giT3BlbkFJbLy2UEPGLwbNa1IBtTt6",
 });
 
 app.use(cors()); 
